@@ -3,9 +3,9 @@ rm(list = ls())
 
 ################ START USER INPUT ##################
 # Enter site name
-site_name <- "your_site_code" # Typically four letter park code and 3 digit numeric code. Sample dataset ex. (YOSE013)
+site_name <- "OAK002" #"your_site_code" # "your_site_code" Typically four letter park code and 3 digit numeric code. Sample dataset ex. (YOSE013)
 # Enter deployment start date
-deploy <- "your_deployment_date" # Typically 8 digits representing the day of deployment in YYYYMMDD. Sample dataset ex. (20240618)
+deploy <-  "20250924" # "your_deployment_date" # "your_deployment_date" Typically 8 digits representing the day of deployment in YYYYMMDD. Sample dataset ex. (20240618)
 ######### END USER INPUT ###################################
 
 # List of required packages
@@ -64,6 +64,9 @@ if (datechange == "Y") {
   data[1, 2] <- newvalue
 }
 
+data$Overload[is.na(data$Overload)] <- ""
+data$Invalid[is.na(data$Invalid)] <- ""
+data$`    Markers    `[is.na(data$`    Markers    `)] <- ""
 
 full_path <- file.path(getwd(), paste0(site_name,"_",deploy))
 

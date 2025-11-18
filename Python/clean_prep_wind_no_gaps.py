@@ -5,7 +5,7 @@ import tkinter as tk
 from tkinter import filedialog
 import csv  # Import csv module
 
-# Clear the workspace (Not necessary in Python, but can reset variables if needed)
+
 # globals().clear()
 
 ########################### START USER INPUT ###########################
